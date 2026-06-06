@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Study Guide | Units 7-12</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18202a;
+      --muted: #5f6b7a;
+      --line: #d9e0e8;
+      --paper: #f6f8fb;
+      --card: #ffffff;
+      --accent: #1f7a8c;
+      --accent-2: #bf5b04;
+      --accent-3: #536dfe;
+      --good: #0a7a45;
+      --bad: #b42318;
+      --soft: #e9f5f7;
+      --warn: #fff3dc;
+      --shadow: 0 12px 30px rgba(20, 28, 38, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    header {
+      padding: 44px 22px 30px;
+      background:
+        linear-gradient(120deg, rgba(31, 122, 140, 0.92), rgba(83, 109, 254, 0.82)),
+        url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .hero {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 4.25rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(1rem, 2.3vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .nav-inner a {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border-radius: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .nav-inner a:hover {
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    main {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    section {
+      margin: 28px 0;
+    }
+
+    .unit {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .unit-head {
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 8px;
+      background: #fbfcfe;
+    }
+
+    .unit-number {
+      width: fit-content;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      letter-spacing: 0;
+    }
+
+    .unit-body {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .focus {
+      border-left: 5px solid var(--accent);
+      background: var(--soft);
+    }
+
+    .warning {
+      border-left: 5px solid var(--accent-2);
+      background: var(--warn);
+    }
+
+    .structure {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: #eef2ff;
+      color: #243c9f;
+      font-weight: 800;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 8px 0 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf7f9;
+      color: #123f49;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 0.9rem;
+    }
+
+    .practice {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .question {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .question:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 10px;
+      border: 1px solid #b8c3d1;
+      border-radius: 6px;
+      font: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 84px;
+      resize: vertical;
+    }
+
+    button {
+      border: 0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: #fff;
+      background: var(--accent);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #166473;
+    }
+
+    .feedback {
+      margin-top: 8px;
+      font-weight: 800;
+      min-height: 22px;
+    }
+
+    .ok {
+      color: var(--good);
+    }
+
+    .no {
+      color: var(--bad);
+    }
+
+    .answer {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .mini-note {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .exam {
+      background: #ffffff;
+      border: 2px solid var(--accent-3);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      padding: 22px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .unit-body,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-top: 34px;
+      }
+    }
+
+    @media print {
+      nav,
+      button {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .unit,
+      .practice,
+      .exam {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <h1>English Study Guide Units 7-12</h1>
+      <p class="subtitle">Guia practica y concisa para repasar estructuras, vocabulario, pronunciacion y ejercicios clave antes de una evaluacion.</p>
+    </div>
+  </header>
+
+  <nav aria-label="Navegacion por unidades">
+    <div class="nav-inner">
+      <a href="#unit-7">Unit 7</a>
+      <a href="#unit-8">Unit 8</a>
+      <a href="#unit-9">Unit 9</a>
+      <a href="#unit-10">Unit 10</a>
+      <a href="#unit-11">Unit 11</a>
+      <a href="#unit-12">Unit 12</a>
+      <a href="#confusions">No confundir</a>
+      <a href="#practice">Ejercicios</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="panel focus">
+      <h2>Como estudiar esta guia</h2>
+      <p>Primero mira la estructura, luego el ejemplo, despues haz los ejercicios sin mirar las respuestas. La clave es reconocer la pista de tiempo: si sabes cuando paso, normalmente usas <strong>Simple Past</strong>; si importa la experiencia y no el momento exacto, usas <strong>Present Perfect</strong>.</p>
+    </section>
+
+    <section id="unit-7" class="unit">
+      <div class="unit-head">
+        <span class="unit-number">Unit 7</span>
+        <h2>Things</h2>
+        <p class="mini-note">Tema central: posesion, objetos cotidianos y nombres contables/no contables.</p>
+      </div>
+      <div class="unit-body">
+        <div class="panel">
+          <h3>Estructuras clave</h3>
+          <ul>
+            <li><span class="structure">Possessive adjective + noun</span>: This is <strong>my phone</strong>. / Those are <strong>her keys</strong>.</li>
+            <li><span class="structure">Possessive pronoun</span>: This phone is <strong>mine</strong>. / The keys are <strong>hers</strong>.</li>
+            <li><span class="structure">Countable nouns</span>: a key, two wallets, three chargers.</li>
+            <li><span class="structure">Uncountable nouns</span>: money, luggage, information, advice. No uses <strong>a/an</strong> ni plural.</li>
+          </ul>
+        </div>
+        <div class="panel warning">
+          <h3>Tip para no confundirte</h3>
+          <p>Si despues de la palabra viene un sustantivo, usa <strong>my, your, his, her, our, their</strong>. Si la palabra queda sola, usa <strong>mine, yours, his, hers, ours, theirs</strong>.</p>
+          <p class="mini-note">Incorrecto: This is mine phone. Correcto: This is my phone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="unit-8" class="unit">
+      <div class="unit-head">
+        <span class="unit-number">Unit 8</span>
+        <h2>Stories</h2>
+        <p class="mini-note">Tema central: Simple Past para acciones terminadas en un tiempo especifico.</p>
+      </div>
+      <div class="unit-body">
+        <div class="panel">
+          <h3>Estructuras clave</h3>
+          <ul>
+            <li><span class="structure">Affirmative</span>: I worked yesterday. / She went to Cali last week.</li>
+            <li><span class="structure">Negative</span>: Subject + <strong>didn't</strong> + verb base. Example: I didn't see the message.</li>
+            <li><span class="structure">Question</span>: <strong>Did</strong> + subject + verb base? Example: Did you finish the task?</li>
+          </ul>
+        </div>
+        <div class="panel warning">
+          <h3>Tip de oro</h3>
+          <p><strong>Did/didn't roba el pasado.</strong> Despues de did o didn't, el verbo vuelve a forma base.</p>
+          <p class="mini-note">Incorrecto: Did you went? Correcto: Did you go?</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="unit-9" class="unit">
+      <div class="unit-head">
+        <span class="unit-number">Unit 9</span>
+        <h2>Getting Around</h2>
+        <p class="mini-note">Tema central: comparativos y peticiones/ofrecimientos con can.</p>
+      </div>
+      <div class="unit-body">
+        <div class="panel">
+          <h3>Estructuras clave</h3>
+          <ul>
+            <li><span class="structure">A + verb + comparative + than + B</span>: The train is faster than the bus.</li>
+            <li>Adjetivo corto: <strong>-er</strong>. fast -> faster, cheap -> cheaper.</li>
+            <li>Adjetivo largo: <strong>more + adjective</strong>. more expensive, more comfortable.</li>
+            <li>Irregulares: good -> <strong>better</strong>, bad -> <strong>worse</strong>.</li>
+            <li><span class="structure">Can you...?</span> para pedir ayuda. <span class="structure">Can I...?</span> para ofrecer ayuda.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Vocabulario de trenes</h3>
+          <div class="chip-list">
+            <span class="chip">platform</span>
+            <span class="chip">ticket office</span>
+            <span class="chip">round-trip ticket</span>
+            <span class="chip">schedule</span>
+            <span class="chip">delay</span>
+            <span class="chip">track</span>
+            <span class="chip">connection</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="unit-10" class="unit">
+      <div class="unit-head">
+        <span class="unit-number">Unit 10</span>
+        <h2>Skills and Experiences</h2>
+        <p class="mini-note">Tema central: Present Perfect vs. Simple Past.</p>
+      </div>
+      <div class="unit-body">
+        <div class="panel focus">
+          <h3>Present Perfect</h3>
+          <p><span class="structure">Subject + have/has + past participle</span></p>
+          <ul>
+            <li>Se usa para experiencias de vida.</li>
+            <li>El momento exacto no se menciona o no importa.</li>
+            <li>Ejemplo: I have managed several projects.</li>
+          </ul>
+        </div>
+        <div class="panel warning">
+          <h3>Simple Past</h3>
+          <p><span class="structure">Subject + verb in past</span></p>
+          <ul>
+            <li>Se usa cuando hay tiempo especifico.</li>
+            <li>Pistas: yesterday, last year, two weeks ago, in 2024.</li>
+            <li>Ejemplo: I managed a project last year.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="unit-11" class="unit">
+      <div class="unit-head">
+        <span class="unit-number">Unit 11</span>
+        <h2>Extremes</h2>
+        <p class="mini-note">Tema central: superlativos, obligaciones y clima extremo.</p>
+      </div>
+      <div class="unit-body">
+        <div class="panel">
+          <h3>Estructuras clave</h3>
+          <ul>
+            <li><span class="structure">the + adjective-est</span>: the highest, the coldest.</li>
+            <li><span class="structure">the most + long adjective</span>: the most difficult, the most dangerous.</li>
+            <li><span class="structure">have to / has to</span>: obligacion. You have to wear a seatbelt.</li>
+            <li><span class="structure">don't have to / doesn't have to</span>: no hay obligacion. It is optional.</li>
+          </ul>
+        </div>
+        <div class="panel warning">
+          <h3>No confundas</h3>
+          <p><strong>Don't have to</strong> no significa prohibicion. Significa que no es necesario.</p>
+          <p class="mini-note">You don't have to go = No tienes que ir, pero puedes ir.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="unit-12" class="unit">
+      <div class="unit-head">
+        <span class="unit-number">Unit 12</span>
+        <h2>The Future</h2>
+        <p class="mini-note">Tema central: going to vs. will para predicciones.</p>
+      </div>
+      <div class="unit-body">
+        <div class="panel focus">
+          <h3>Be going to</h3>
+          <ul>
+            <li>Prediccion basada en evidencia visible: Look at those clouds. It's going to rain.</li>
+            <li>Tambien sirve para planes o intenciones ya pensadas: I'm going to study tonight.</li>
+          </ul>
+        </div>
+        <div class="panel warning">
+          <h3>Will</h3>
+          <ul>
+            <li>Prediccion basada en opinion, creencia o suposicion: I think technology will change our lives.</li>
+            <li>Se contrae con pronombres: I'll, you'll, he'll, she'll, we'll, they'll.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="confusions" class="panel">
+      <h2>No Confundir</h2>
+      <div class="grid-2">
+        <table>
+          <thead>
+            <tr>
+              <th>Tema</th>
+              <th>Usa esto cuando...</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Present Perfect</td>
+              <td>Hablas de experiencia o resultado sin decir cuando.</td>
+              <td>I have visited Medellin.</td>
+            </tr>
+            <tr>
+              <td>Simple Past</td>
+              <td>Dices cuando ocurrio.</td>
+              <td>I visited Medellin last year.</td>
+            </tr>
+            <tr>
+              <td>Going to</td>
+              <td>Hay evidencia presente o plan previo.</td>
+              <td>Look! It is going to fall.</td>
+            </tr>
+            <tr>
+              <td>Will</td>
+              <td>Es una opinion o prediccion general.</td>
+              <td>I think it will be easy.</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Forma</th>
+              <th>Recuerda</th>
+              <th>Error comun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Did + base verb</td>
+              <td>Did ya marca pasado.</td>
+              <td>Did you went?</td>
+            </tr>
+            <tr>
+              <td>Mine/yours/hers</td>
+              <td>No llevan sustantivo despues.</td>
+              <td>Mine phone</td>
+            </tr>
+            <tr>
+              <td>Don't have to</td>
+              <td>No es necesario, no es prohibido.</td>
+              <td>I don't have to = I mustn't</td>
+            </tr>
+            <tr>
+              <td>More + adjective</td>
+              <td>Para adjetivos largos.</td>
+              <td>expensiver</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="practice" class="practice">
+      <h2>Ejercicios de repaso</h2>
+      <p class="mini-note">Escribe o selecciona la respuesta correcta. Luego presiona "Revisar respuestas".</p>
+
+      <div class="question">
+        <label for="q1">1. Completa: This backpack is not yours. It is ____.</label>
+        <input id="q1" data-answer="mine" autocomplete="off">
+      </div>
+
+      <div class="question">
+        <label for="q2">2. Corrige la frase: Did she went to the ticket office?</label>
+        <input id="q2" data-answer="did she go to the ticket office" autocomplete="off">
+      </div>
+
+      <div class="question">
+        <label for="q3">3. Elige: The train is ____ than the bus.</label>
+        <select id="q3" data-answer="faster">
+          <option value="">Selecciona una opcion</option>
+          <option value="fastest">fastest</option>
+          <option value="faster">faster</option>
+          <option value="more fast">more fast</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q4">4. Elige el tiempo correcto: I ____ three countries. No digo cuando.</label>
+        <select id="q4" data-answer="have visited">
+          <option value="">Selecciona una opcion</option>
+          <option value="visited">visited</option>
+          <option value="have visited">have visited</option>
+          <option value="did visit">did visit</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q5">5. Elige el tiempo correcto: I ____ three countries in 2024.</label>
+        <select id="q5" data-answer="visited">
+          <option value="">Selecciona una opcion</option>
+          <option value="have visited">have visited</option>
+          <option value="visited">visited</option>
+          <option value="has visited">has visited</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q6">6. Completa: Mount Everest is ____ mountain in the world.</label>
+        <input id="q6" data-answer="the highest" autocomplete="off">
+      </div>
+
+      <div class="question">
+        <label for="q7">7. Elige: Tomorrow is Sunday, so I ____ wake up early.</label>
+        <select id="q7" data-answer="don't have to">
+          <option value="">Selecciona una opcion</option>
+          <option value="don't have to">don't have to</option>
+          <option value="mustn't">mustn't</option>
+          <option value="has to">has to</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q8">8. Elige: Look at the black clouds. It ____ rain.</label>
+        <select id="q8" data-answer="is going to">
+          <option value="">Selecciona una opcion</option>
+          <option value="will">will</option>
+          <option value="is going to">is going to</option>
+          <option value="did">did</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q9">9. Traduce la idea: "Creo que el examen sera facil".</label>
+        <input id="q9" data-answer="i think the exam will be easy" autocomplete="off">
+      </div>
+
+      <div class="question">
+        <label for="q10">10. Escribe una pregunta en Present Perfect sobre experiencia con "ever".</label>
+        <textarea id="q10" data-keywords="have,ever"></textarea>
+        <p class="answer">Modelo: Have you ever spoken in public?</p>
+      </div>
+
+      <button type="button" id="checkBtn">Revisar respuestas</button>
+      <p id="score" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section class="exam">
+      <h2>Mini examen rapido</h2>
+      <ol>
+        <li>Explica en una frase la diferencia entre <strong>I have worked</strong> y <strong>I worked yesterday</strong>.</li>
+        <li>Escribe dos objetos contables y dos no contables.</li>
+        <li>Haz una pregunta con <strong>Can you...?</strong> para pedir ayuda en una estacion.</li>
+        <li>Compara dos medios de transporte usando <strong>than</strong>.</li>
+        <li>Escribe una prediccion con evidencia usando <strong>going to</strong>.</li>
+      </ol>
+      <p class="mini-note">Respuestas esperadas: tiempo no especifico vs. tiempo especifico; countable como keys/wallets y uncountable como money/luggage; uso correcto de can, comparative + than y going to con evidencia.</p>
+    </section>
+
+    <section class="panel focus">
+      <h2>Resumen final en 6 reglas</h2>
+      <ul>
+        <li><strong>My phone</strong> lleva sustantivo; <strong>mine</strong> va solo.</li>
+        <li>Con <strong>did/didn't</strong>, el verbo principal va en forma base.</li>
+        <li><strong>Present Perfect</strong>: experiencia sin tiempo exacto.</li>
+        <li><strong>Simple Past</strong>: accion terminada con tiempo claro.</li>
+        <li><strong>Going to</strong>: evidencia presente o plan decidido.</li>
+        <li><strong>Will</strong>: opinion, creencia o prediccion general.</li>
+      </ul>
+    </section>
+  </main>
+
+  <p class="footer-note">Guia HTML generada para repaso de English Units 7-12.</p>
+
+  <script>
+    const normalize = (value) => value
+      .toLowerCase()
+      .replace(/[?.!,]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    document.getElementById("checkBtn").addEventListener("click", () => {
+      const fields = Array.from(document.querySelectorAll("[data-answer], [data-keywords]"));
+      let correct = 0;
+
+      fields.forEach((field) => {
+        const old = field.parentElement.querySelector(".feedback");
+        if (old) old.remove();
+
+        const result = document.createElement("p");
+        result.className = "feedback";
+        const value = normalize(field.value);
+        let isCorrect = false;
+
+        if (field.dataset.answer) {
+          isCorrect = value === normalize(field.dataset.answer);
+        }
+
+        if (field.dataset.keywords) {
+          const keywords = field.dataset.keywords.split(",");
+          isCorrect = keywords.every((word) => value.includes(word));
+        }
+
+        if (isCorrect) {
+          correct += 1;
+          result.textContent = "Correcto";
+          result.classList.add("ok");
+        } else {
+          result.textContent = field.dataset.answer
+            ? `Revisa. Respuesta sugerida: ${field.dataset.answer}.`
+            : "Revisa que uses have/has y ever.";
+          result.classList.add("no");
+        }
+
+        field.parentElement.appendChild(result);
+      });
+
+      document.getElementById("score").textContent = `Puntaje: ${correct}/${fields.length}`;
+      document.getElementById("score").className = correct >= 8 ? "feedback ok" : "feedback no";
+    });
+  </script>
+</body>
+</html>
